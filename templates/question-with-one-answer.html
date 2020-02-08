@@ -7,4 +7,19 @@
 
 {% block body %}
 
+<div>
+    <form action="{{ url_for('the_question') }}" method="GET">
+        <label for="question">Give me a question: </label><textarea name="question" id="question" placeholder="type it here"></textarea><br>
+        <label for="answer" >Set the only answer: </label>
+        <select name="answer" id="answer">
+            <option value="yes" selected>Yes</option>
+            <option value="no">No</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+
+
 {% endblock body %}

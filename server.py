@@ -10,8 +10,15 @@ def home():
 
 @app.route('/the-question')
 def the_question():
-
-    return render_template('the-question.html')
+    if request.method == 'GET':
+        question = request.args.get('question')
+        answer = request.args.get('answer')
+        print(question, answer)
+        return render_template('the-question.html',
+                               question=question,
+                               answer=answer)
+    else:
+        return render_template('question-with-one-answer.html')
 
 
 if __name__ == "__main__":
